@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "es6",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "baseUrl": "./packages/",
+    "noEmit": true,
+  },
+  "include": ["./packages/**/*"],
+  "exclude": ["node_modules"],
+}

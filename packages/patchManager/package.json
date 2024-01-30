@@ -1,5 +1,5 @@
 {
-  "name": "@quartz/core",
+  "name": "@quartz/patchManager",
   "private": true,
   "exports": {
     "./*": "./src/*.ts"

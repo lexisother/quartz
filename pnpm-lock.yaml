@@ -36,7 +36,19 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
 
-  packages/core: {}
+  packages/common: {}
+
+  packages/core:
+    dependencies:
+      '@quartz/common':
+        specifier: workspace:*
+        version: link:../common
+
+  packages/patchManager:
+    dependencies:
+      '@quartz/common':
+        specifier: workspace:*
+        version: link:../common
 
 packages:
 

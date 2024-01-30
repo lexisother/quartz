@@ -1,0 +1,7 @@
+{
+  "name": "@quartz/common",
+  "private": true,
+  "exports": {
+    "./*": "./src/*.ts"
+  }
+}

@@ -1,9 +1,13 @@
 import * as esbuild from 'esbuild';
 import path from 'path';
-import fs from 'fs';
+
+const config = {
+  core: 'packages/core/src/main.ts',
+  patchManager: 'packages/patchManager/src/index.ts',
+};
 
 async function build(name, entry) {
-  const outfile = path.join('./dist', name + '.js');
+  const outfile = path.join('./dist', `${name}.js`);
 
   /** @type {import("esbuild").BuildOptions} */
   const esbuildConfig = {
@@ -22,4 +26,8 @@ async function build(name, entry) {
   await esbuild.build(esbuildConfig);
 }
 
-Promise.all([build('core', 'packages/core/src/main.ts')]);
+const promises = [];
+for (const [name, path] of Object.entries(config)) {
+  promises.push(build(name, path));
+}
+Promise.all(promises);
